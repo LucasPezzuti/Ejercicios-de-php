@@ -203,32 +203,34 @@ echo '<form method ="post" action="index.php">
 Nota: <input type="integer" name="nota">
 <input type="submit" name="submit" value="Submit"> 
 </form>';
+if(isset($_POST['nota'])){
 
-switch($_POST['nota'])
-{
-   case 1:
-    case 2: 
-    case 3: 
-        echo "desaprobado";
-        break;
-    case 4:
-    case 5:    
-       echo "zafamos";
-       break;
-    case 6:
-    case 7:
-    case 8:
-       echo "BIEN LA COANHFUEAMDRE";
-       break;
-    case 9:
-        echo "veri gud";
-        break;
-    case 10:
-        echo "exelent wachin";
-        break;
-    default:
-        echo "el numero no es valido";
-        break;
+    switch($_POST['nota'])
+    {
+       case 1:
+        case 2: 
+        case 3: 
+            echo "desaprobado";
+            break;
+        case 4:
+        case 5:    
+           echo "zafamos";
+           break;
+        case 6:
+        case 7:
+        case 8:
+           echo "BIEN LA COANHFUEAMDRE";
+           break;
+        case 9:
+            echo "veri gud";
+            break;
+        case 10:
+            echo "exelent wachin";
+            break;
+        default:
+            echo "el numero no es valido";
+            break;
+    }
 }
 
 ?>
