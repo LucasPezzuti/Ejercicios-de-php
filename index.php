@@ -199,7 +199,7 @@ switch($_POST['answer'])
  */
 
 
-echo '<form method ="post" action="index.php">
+/* echo '<form method ="post" action="index.php">
 Nota: <input type="integer" name="nota">
 <input type="submit" name="submit" value="Submit"> 
 </form>';
@@ -232,5 +232,197 @@ if(isset($_POST['nota'])){
             break;
     }
 }
+ */
+
+
+// CLASE 07/11
+
+//EJERCICIO 1
+
+/*   $limite=20;
+  $numero=2;
+  for($i=0;$i<=$limite;$i++){
+      if($i%$numero==0){
+      echo $i." es múltiplo de ".$numero;
+      echo '<br />';
+      }
+  }
+ */
+
+  //EJERCICIO 2
+
+/*   $numero=100;
+  while($numero>=85){
+      echo $numero;
+      $numero--;
+      echo '<br />';
+  } */
+
+  //EJERCICIO 3
+
+/*   $contador=1;
+  
+  while($contador<=5){
+    echo $contador*2;
+    $contador++;
+    echo '<br />';
+  } */
+
+  //EJERCICIO 4
+
+/* $contador=0;
+$contador1=0;
+ while($contador<5){
+    $numero= rand(0,1);
+    if($numero==1){
+    $contador++;
+    $contador1++;
+    } else {
+       $contador1++; 
+    }
+    
+  }
+  
+  if ($contador=5){
+    echo "Tomó ".$contador1." intentos para sacar 5 caras ";
+  } */
+
+//EJERCICIO 5.a
+/* 
+$nombres=["Lola","greta","pampa","Parana","Bambi"];
+for($i=0;$i<(count($nombres));$i++){
+  echo $nombres[$i];
+  echo '<br />';
+
+
+} */
+
+//EJERCICIO 5.b
+
+/* $nombres=["Lola","greta","pampa","Parana","Bambi"];
+$contador = (count($nombres));
+$numero=0;
+  while($numero<$contador){
+    echo $nombres[$numero];
+    $numero++;
+    echo '<br />';
+}
+ */
+
+
+ //EJERCICIO 5.c
+
+/* $nombres=["Lola","greta","pampa","Parana","Bambi"];
+$contador = (count($nombres));
+$numero=0;
+  do{
+  echo $nombres[$numero];
+  $numero++;
+  echo '<br />';
+}
+  while($numero<$contador)
+ */
+
+
+//EJERCICIO 5.d
+
+/* $nombres=["Lola","greta","pampa","Parana","Bambi"];
+
+  foreach ($nombres as $lolas) {
+    echo $lolas;
+    $lolas = $lolas++;
+    echo '<br />';
+  }
+ */
+
+//EJERCICIO 6
+
+/* $numeros=[rand(0,10),rand(0,10),rand(0,10),rand(0,10),rand(0,10),rand(0,10),rand(0,10),rand(0,10),rand(0,10),rand(0,10)];
+
+foreach ($numeros as $n) {
+    if ($n==5){
+        echo "Se encontró un 5!";
+        exit;
+    } else {
+    echo $n;
+    $n = $n++;
+    echo '<br />';
+  }
+}
+ */
+
+
+
+ //EJERCICIO 7
+/* 
+ $numeros=[rand(0,100),rand(0,100),rand(0,100),rand(0,100),rand(0,100),rand(0,100),rand(0,100),rand(0,100),rand(0,100),rand(0,100)];
+ $contador=0;
+
+ foreach ($numeros as $n) {
+    if ($n%2==0){
+        $contador++;
+        $n++;
+    } else {
+    $n++;
+    }
+}
+echo $contador;
+ */
+
+ //EJERCICIO 8
+/* 
+$mascota = [
+    "animal" => "perro",
+    "edad" => 5,
+    "altura" => "2 metros",
+    "nombre" => "Lola"
+];
+
+foreach ($mascota as $lolas => $value) {
+    echo "$lolas:$value <br>";
+    $lolas = $lolas++;
+  } */
+
+
+  //EJERCICIO 9
+/* 
+  $ceu = array( "Italia"=>"Roma", "Luxembourg"=>"Luxembourg", "Bélgica"=> "Bruselas", "Dinamarca"=>"Copenhagen", "Finlandia"=>"Helsinki", "Francia" => "Paris", "Slovakia"=>"Bratislava", "Eslovenia"=>"Ljubljana", "Alemania" => "Berlin", "Grecia" => "Athenas", "Irlanda"=>"Dublin", "Holanda"=>"Amsterdam", "Portugal"=>"Lisbon", "España"=>"Madrid", "Suecia"=>"Stockholm", "Reino Unido"=>"London", "Chipre"=>"Nicosia", "Lithuania"=>"Vilnius", "Republica Checa"=>"Prague", "Estonia"=>"Tallin", "Hungría"=>"Budapest", "Latvia"=>"Riga", "Malta"=>"Valletta", "Austria" => "Vienna", "Polonia"=>"Warsaw") ;
+
+
+  foreach ($ceu as $c => $value) {
+    echo "$c:$value <br>";
+    $c = $c++;
+  } 
+ */
+
+ //EJERCICIO 10
+
+$ceu = [
+    "Argentina"        => ["Buenos Aires", "Córdoba", "Santa Fé"],
+    "Brasil" => ["Brasilia", "Rio de Janeiro", "Sao Pablo"],
+    "Colombia" => ["Cartagena", "Bogota", "Barranquilla"],
+    "Francia" => ["Paris", "Nantes", "Lyon"],
+    "Italia" => ["Roma", "Milan", "Venecia"],
+    "Alemania" => ["Munich", "Berlin", "Frankfurt"]
+];
+
+
+    foreach($ceu as $pais => $ciudades){
+        echo "Las ciudades de $pais son: <br>";
+        echo "<ul>";
+        foreach($ciudades as $ciudad){
+            echo "<li>$ciudad</li>";
+        };
+        echo "</ul>";
+    }                 
+    
+    
+    $argentina = array('Ciudades' => array("Buenos Aires", "Santa Fe"), 'EsAmericano' => array(true));
+
+    if ($argentina['EsAmericano'] = True){
+        echo $argentina['EsAmericano'];
+    }
+
+    //print_r($argentina);
 
 ?>
