@@ -397,7 +397,7 @@ foreach ($mascota as $lolas => $value) {
 
  //EJERCICIO 10
 
-$ceu = [
+/* $ceu = [
     "Argentina"        => ["Buenos Aires", "Córdoba", "Santa Fé"],
     "Brasil" => ["Brasilia", "Rio de Janeiro", "Sao Pablo"],
     "Colombia" => ["Cartagena", "Bogota", "Barranquilla"],
@@ -423,6 +423,11 @@ $ceu = [
         echo $argentina['EsAmericano'];
     }
 
-    //print_r($argentina);
+    //print_r($argentina); */
+
+
+    //clase 12/11
+
+    
 
 ?>
