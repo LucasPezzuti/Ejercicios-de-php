@@ -76,8 +76,12 @@ if($_POST){
                     <input type='password' name='password' id='password' maxlength="50" />
                     <div id='register_password_errorloc' class='error' style='clear:both'></div>
                 </div>
-
                 <div class='container'>
+                <input type="checkbox">Recuerdame
+                    <br>
+                </div>
+                <div class='container'>
+                   
                     <input type='submit' name='Submit' value='Enviar' />
                 </div>
 
