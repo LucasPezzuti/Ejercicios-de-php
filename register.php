@@ -6,31 +6,38 @@ if($_POST){
     $db= file_get_contents('usuarios.json');
     $usuarios = json_decode($db,true); //true pa q de array
 
-
     if(strlen($_POST['username'])> 3 && strlen($_POST['password'])>3){
-        $usuarios[]= [
 
+        $validacion= $_POST['email'];
+        $chequeoemail= array_search($validacion ,array_column($usuarios,"email"));
+        if($chequeoemail===false){
+            if(count($usuarios)){
+                $id = end($usuarios)['id'] + 1;
+            } else{
+                $id = 1;
+            }
+            $usuarios[]= [
+
+                        "id"=>$id,
                         "name"=>$_POST['name'],
                         "email" => $_POST['email'],
                         "usuario" => $_POST['username'],
-                        "password" => password_hash($_POST['password'],
-                         PASSWORD_DEFAULT)
+                        "password" => password_hash($_POST['password'],PASSWORD_DEFAULT)
                         //$hash = password_hash($_POST['password'], PASSWORD_DEFAULT);   
                     
-        ];
-        $db= json_encode($usuarios);
-        file_put_contents('usuarios.json',$db);
+            ];
+            $db= json_encode($usuarios);
+            file_put_contents('usuarios.json',$db);
+        } else {
+            echo 'El correo ya existe';
+        }
+    } else {
+        $error = "no completo los datos, alto pt";
     }
-
-
-}
-  else {
-      $error = "no completo los datos, alto pt";
-  }
  //$array=[];
  //$array = array("nombre" => $_POST['name'], "email" => $_POST['email'], "usuario" => $_POST['username'], "contraseña" => $_POST['password']);
  //print_r($array);
-
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -78,5 +85,5 @@ if($_POST){
         </form>
 
     </body>
-</html>
 
+    </html>

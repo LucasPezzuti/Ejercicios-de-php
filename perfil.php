@@ -1,21 +1,24 @@
 <?php
 
-$nombre=$_GET['name'];
+//$nombre=$_GET['name'];
 $db= file_get_contents('usuarios.json');
 $usuarios = json_decode($db,true);
-print_r($usuarios);
-echo "<br><br>";
-foreach($usuarios as $key => $valor){
-    echo print_r($valor).$key;
-    echo "<br>";
+//print_r($usuarios);
 
-    foreach($valor as $key2=> $valor ){
-        if ($key2 == 'email'){
-            if ($valor== $_GET['email']){
-                print_r($valor);
-            }
-        }
-    }
-}    
+$recibido =$_GET['email'];
+
+/* if(isset($_GET['email']){
+    $verificar=array_column($usuarios,'email');
+}) */
+$indice=array_search($recibido ,array_column($usuarios,"email"));
+
+ if($indice){
+    $usuario=$usuarios[$indice];
+    print_r( $usuario);
+
+}else {
+    echo 'nope'; 
+} 
+
 
 ?>
